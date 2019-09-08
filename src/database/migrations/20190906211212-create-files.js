@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, DataTypes) => {
-    return queryInterface.createTable("users", {
+    return queryInterface.createTable("files", {
       id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -13,14 +13,10 @@ module.exports = {
         type: DataTypes.STRING,
         allowNull: false
       },
-      email: {
+      path: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true
-      },
-      password_hash: {
-        type: DataTypes.STRING,
-        allowNull: false
       },
       created_at: {
         type: DataTypes.DATE,
@@ -34,6 +30,6 @@ module.exports = {
   },
 
   down: queryInterface => {
-    return queryInterface.dropTable("users");
+    return queryInterface.dropTable("files");
   }
 };
