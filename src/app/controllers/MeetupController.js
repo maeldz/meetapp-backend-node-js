@@ -136,10 +136,19 @@ class MeetupController {
       title,
       description,
       location,
-      date
+      date,
+      banner_id
     } = await meetup.update(req.body);
 
-    return res.json({ id, user_id, title, description, location, date });
+    return res.json({
+      id,
+      user_id,
+      title,
+      description,
+      location,
+      date,
+      banner_id
+    });
   }
 
   async delete(req, res) {
