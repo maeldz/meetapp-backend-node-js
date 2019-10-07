@@ -35,7 +35,13 @@ class MeetupController {
       include: [
         {
           model: User,
+          as: "user",
           attributes: ["name", "email"]
+        },
+        {
+          model: File,
+          as: "banner",
+          attributes: ["id", "path", "url"]
         }
       ],
       limit: 10,
